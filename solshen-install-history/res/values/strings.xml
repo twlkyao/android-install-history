@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, InstallHistoryActivity!</string>
     <string name="app_name">Android-install-history</string>
+    <string name="history_provider">Install History Provider</string>
 </resources>
