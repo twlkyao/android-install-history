@@ -27,7 +27,7 @@ public class PackageActionReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (action.equals(Intent.ACTION_PACKAGE_ADDED)) {
-
+        	
         }
     }
 }
