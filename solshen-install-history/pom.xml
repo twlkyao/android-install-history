@@ -9,7 +9,7 @@
     <artifactId>install-history-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>install-history</artifactId>
+  <artifactId>solshen-install-history</artifactId>
   <packaging>apk</packaging>
   <name>Install History :: Android App</name>
   <dependencies>
