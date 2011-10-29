@@ -1,7 +1,4 @@
 target/
 bin/
 gen/
-.classpath
-.project
-.settings/
 *.sw[a-z]
