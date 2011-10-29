@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.provider.BaseColumns;
 
 import com.solshen.install.history.logging.Logger;
 
@@ -40,7 +41,7 @@ public class HistoryProvider extends ContentProvider {
             break;
         case SINGLE_HISTORY_EVENT:
             table = HistoryTable.TABLE;
-            where = DBUtil.toPrependedWhere(selection, HistoryTable._ID + " = ?");
+            where = DBUtil.toPrependedWhere(selection, BaseColumns._ID + " = ?");
             whereArgs = DBUtil.toPrependedWhereArgs(selectionArgs, uri.getLastPathSegment());
             break;
         default:
@@ -80,7 +81,7 @@ public class HistoryProvider extends ContentProvider {
             throw new IllegalArgumentException("Unsupported content URI: " + uri);
         }
 
-        if (rowid > 0) {
+        if (rowid >= 0) {
             Uri nuri = ContentUris.withAppendedId(baseUri, rowid);
             getContext().getContentResolver().notifyChange(nuri, null);
             return nuri;
@@ -112,7 +113,7 @@ public class HistoryProvider extends ContentProvider {
             break;
         case SINGLE_HISTORY_EVENT:
             tables = HistoryTable.TABLE;
-            where = DBUtil.toPrependedWhere(selection, HistoryTable._ID + " = ?");
+            where = DBUtil.toPrependedWhere(selection, BaseColumns._ID + " = ?");
             whereArgs = DBUtil.toPrependedWhereArgs(selectionArgs, uri.getLastPathSegment());
             orderBy = DBUtil.toOrderBy(sortOrder, HistoryTable.DEFAULT_SORT_ORDER);
             break;
@@ -137,7 +138,7 @@ public class HistoryProvider extends ContentProvider {
             break;
         case SINGLE_HISTORY_EVENT:
             table = HistoryTable.TABLE;
-            where = DBUtil.toPrependedWhere(selection, HistoryTable._ID + " = ?");
+            where = DBUtil.toPrependedWhere(selection, BaseColumns._ID + " = ?");
             whereArgs = DBUtil.toPrependedWhereArgs(selectionArgs, uri.getLastPathSegment());
             break;
         default:
